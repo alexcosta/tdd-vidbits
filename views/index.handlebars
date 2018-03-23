@@ -1,0 +1,30 @@
+<section class="section">
+    <div class="container">
+        <nav class="level">
+            <div class="level-right">
+                <a class="level-item button is-link" id="create-video" href="/videos/create">Create Video</a>
+            </div>
+        </nav>
+        <div id="videos-container" >
+            {{#group_each 3 videos}}
+            <div class="columns">
+                {{#each this}}
+                <div class="column">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title"><a class="title-link is-size-4" href="/videos/{{id}}">{{title}}</a></p>
+                        </header>
+                        <div class="card-content">
+                            <div class="video-container">
+                                <iframe class="video-embed video" width="560" height="315" src="{{videoUrl}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <p class="is-size-5">{{description}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/group_each}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,47 @@
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-half is-offset-one-quarter">
+                <div class="card">
+                    <header class="card-header">
+                        <h1 class="card-header-title has-text-info">Update Video</h1>
+                    </header>
+                    <div class="card-content">
+                        {{#if video.errors}}
+                        <div class="notification is-danger">
+                            {{#each video.errors as |error|}}
+                            <p class="error">{{error.message}}</p>
+                            {{/each}}
+                        </div>
+                        {{/if}}
+                        <form id="update-video-form" action="/videos/{{video.id}}/update" method="post">
+                            <div class="field">
+                                <label class="label" for="title">Title:</label>
+                                <div class="control">
+                                    <input value="{{video.title}}" class="input" type="text" name="title" id="title-input">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="videoUrl">Video URL:</label>
+                                <div class="control">
+                                    <input value="{{video.videoUrl}}" class="input" type="text" name="videoUrl" id="video-url">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label" for="description">Description:</label>
+                                <div class="control">
+                                    <textarea class="textarea" name="description" id="description-input">{{video.description}}</textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-primary" id="submit-button" type="submit">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

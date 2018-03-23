@@ -1,0 +1,23 @@
+<section class="section">
+    <div class="container">
+        <nav class="level">
+            <div class="level-right">
+                <a class="level-item button is-link" id="update-video" href="/videos/{{video.id}}/update">Update Video</a>
+                <form class="level-item delete-form" action="/videos/{{video.id}}/remove" method="post">
+                    <button class="button submit-button is-danger" id="remove-video" type="submit">Remove</button>
+                </form>
+            </div>
+        </nav>
+        <div class="card" id="video">
+            <header class="card-header">
+                <p class="card-header-title"><a class="is-size-4" href="/videos/{{video.id}}">{{video.title}}</a></p>
+            </header>
+            <div class="card-content">
+                <div class="video-container">
+                    <iframe id="video-embed" class="video" width="560" height="315" src="{{video.videoUrl}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p class="is-size-5">{{video.description}}</p>
+            </div>
+        </div>
+    </div>
+</section>
